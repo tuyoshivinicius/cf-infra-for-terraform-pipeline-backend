@@ -16,7 +16,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties: 
       AccessControl: Private
-      BucketName: !Sub ${Env}-${Name}-${AWS::Region}
+      BucketName: !Sub ${Env}-${Name}-${AWS::AccountId}-${AWS::Region}
       Tags:
         - Key: CreatedBy
           Value: Terrafrom
@@ -35,7 +35,7 @@ Resources:
       ProvisionedThroughput: 
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
-      TableName: !Sub ${Env}-${Name}-${AWS::Region}
+      TableName: !Sub ${Env}-${Name}-${AWS::AccountId}-${AWS::Region}
       Tags:
         - Key: CreatedBy
           Value: Terrafrom
